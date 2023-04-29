@@ -542,7 +542,49 @@ namespace WindowsFormsApp1
                 nepritel.Show();
             }
         }
-
+        void GameUpdate()
+        {
+            if (nepritel.Bounds.IntersectsWith(Player.Bounds))
+            {
+                int temp1 = r.Next(0, 500);
+                int temp2 = r.Next(0, 500);
+                l += 1;
+                LifeIndex();
+                nepritel.Location = new Point(temp1, temp2);
+            }
+            if (nepritel2.Bounds.IntersectsWith(Player.Bounds))
+            {
+                int temp1 = r.Next(0, 500);
+                int temp2 = r.Next(0, 500);
+                l += 1;
+                LifeIndex();
+                nepritel2.Location = new Point(temp1, temp2);
+            }
+            if (nepritel3.Bounds.IntersectsWith(Player.Bounds))
+            {
+                int temp1 = r.Next(0, 500);
+                int temp2 = r.Next(0, 500);
+                l += 1;
+                LifeIndex();
+                nepritel3.Location = new Point(temp1, temp2);
+            }
+            if (nepritel4.Bounds.IntersectsWith(Player.Bounds))
+            {
+                int temp1 = r.Next(0, 500);
+                int temp2 = r.Next(0, 500);
+                l += 1;
+                LifeIndex();
+                nepritel4.Location = new Point(temp1, temp2);
+            }
+            if (nepritel5.Bounds.IntersectsWith(Player.Bounds))
+            {
+                int temp1 = r.Next(0, 500);
+                int temp2 = r.Next(0, 500);
+                l += 1;
+                LifeIndex();
+                nepritel5.Location = new Point(temp1, temp2);
+            }
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
