@@ -586,6 +586,33 @@ namespace WindowsFormsApp1
                 nepritel5.Location = new Point(temp1, temp2);
             }
         }
+        private void retry_Click(object sender, EventArgs e)
+        {
+            score = 0;
+            skore.Text = "skore: 0";
+            skore2.Text = "skore: 0";
+            l = 0;
+            enemyHitCount = 0;
+            x = false;
+            pause = false;
+            Player.Location = new Point(87, 466);
+            nepritel.Location = new Point(226, 42);
+            nepritel4.Location = new Point(402, 52);
+            nepritel2.Location = new Point(986, 56);
+            nepritel3.Location = new Point(757, 56);
+            nepritel5.Location = new Point(1208, 56);
+            zivotynepritele.Image = Properties.Resources.cool3;
+            zivotynepritele2.Image = Properties.Resources.cool3;
+            zivotynepritele3.Image = Properties.Resources.cool3;
+            zivotynepritele4.Image = Properties.Resources.cool3;
+            zivotynepritele5.Image = Properties.Resources.cool3;
+            zivot3.Image = Properties.Resources.Bez_názvus_nazvem;
+            zivot2.Image = Properties.Resources.Bez_názvus_nazvem;
+            zivot1.Image = Properties.Resources.Bez_názvus_nazvem;
+            zivotnepritel = 11;
+            panel2.Hide();
+            timer1.Start();
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
