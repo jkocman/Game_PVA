@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
         bool x = false;
         int enemyHitCount = 0;
         int zivotnepritel = 11;
+        int obtiznost = 1;
         public Form1()
         {
             
@@ -391,7 +392,80 @@ namespace WindowsFormsApp1
             }
 
         }
-        void Steny()
+        void EnemyAI()
+        {
+            if (obtiznost == 1)
+            {
+                nepritel.Show();
+                zivotynepritele.Show();
+                Point p = nepritel.Location;
+                p.X += (Player.Location.X - p.X) / 25;
+                p.Y += (Player.Location.Y - p.Y) / 25;
+                nepritel.Location = p;
+            }
+            if (obtiznost == 2)
+            {
+                nepritel.Show();
+                zivotynepritele.Show();
+                Point p = nepritel.Location;
+                p.X += (Player.Location.X - p.X - 80) / 25;
+                p.Y += (Player.Location.Y - p.Y + 120) / 25;
+                nepritel.Location = p;
+
+                nepritel2.Show();
+                zivotynepritele2.Show();
+                Point d = nepritel2.Location;
+                d.X += (Player.Location.X - d.X + 80) / 25;
+                d.Y += (Player.Location.Y - d.Y - 120) / 25;
+                nepritel2.Location = d;
+
+                nepritel3.Show();
+                zivotynepritele3.Show();
+                Point z = nepritel3.Location;
+                z.X += (Player.Location.X - z.X) / 25;
+                z.Y += (Player.Location.Y - z.Y) / 25;
+                nepritel3.Location = z;
+
+            }
+            if (obtiznost == 3)
+            {
+                nepritel.Show();
+                zivotynepritele.Show();
+                Point p = nepritel.Location;
+                p.X += (Player.Location.X - p.X + 120) / 25;
+                p.Y += (Player.Location.Y - p.Y - 80) / 25;
+                nepritel.Location = p;
+
+                nepritel2.Show();
+                zivotynepritele2.Show();
+                Point d = nepritel2.Location;
+                d.X += (Player.Location.X - d.X - 80) / 25;
+                d.Y += (Player.Location.Y - d.Y + 120) / 25;
+                nepritel2.Location = d;
+
+                nepritel3.Show();
+                zivotynepritele3.Show();
+                Point z = nepritel3.Location;
+                z.X += (Player.Location.X - z.X + 160) / 25;
+                z.Y += (Player.Location.Y - z.Y - 120) / 25;
+                nepritel3.Location = z;
+
+                nepritel3.Show();
+                zivotynepritele3.Show();
+                Point x = nepritel3.Location;
+                x.X += (Player.Location.X - x.X - 160) / 25;
+                x.Y += (Player.Location.Y - x.Y - 120) / 25;
+                nepritel3.Location = x;
+
+                nepritel4.Show();
+                zivotynepritele4.Show();
+                Point n = nepritel4.Location;
+                n.X += (Player.Location.X - n.X) / 25;
+                n.Y += (Player.Location.Y - n.Y) / 25;
+                nepritel4.Location = n;
+            }
+        }
+            void Steny()
         {
             if (Player.Bounds.IntersectsWith(stena2.Bounds))
             {
@@ -437,6 +511,8 @@ namespace WindowsFormsApp1
             PlayerMove();
             Bolts();
             Steny();
+            EnemyAI();
+            ZivotNepritel();
         }
 
     }
