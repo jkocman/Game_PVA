@@ -140,6 +140,21 @@ namespace WindowsFormsApp1
         {
             panel4.Show();
         }
+        private void Easy_Click(object sender, EventArgs e)
+        {
+            obtiznost = 1;
+            panel4.Hide();
+        }
+        private void Normal_Click(object sender, EventArgs e)
+        {
+            obtiznost = 2;
+            panel4.Hide();
+        }
+        private void Hard_Click(object sender, EventArgs e)
+        {
+            obtiznost = 3;
+            panel4.Hide();
+        }
         void Bolts()
         {
             int i = Player.Location.X;
