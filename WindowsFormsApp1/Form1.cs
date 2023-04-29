@@ -23,6 +23,8 @@ namespace WindowsFormsApp1
         int enemyHitCount = 0;
         int zivotnepritel = 11;
         int obtiznost = 1;
+        Random r = new Random();
+        int score;
         public Form1()
         {
             
@@ -525,6 +527,22 @@ namespace WindowsFormsApp1
                 timer1.Stop();
             }
         }
+
+        void Respawn()
+        {
+            int x = r.Next(0, 500);
+            int y = r.Next(0, 500);
+            if (zivotnepritel <= 0)
+            {
+                score++;
+                skore.Text = "skore: " + score;
+                skore2.Text = "skore: " + score;
+                zivotnepritel = 11;
+                nepritel.Location = new Point(y, x);
+                nepritel.Show();
+            }
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
@@ -532,6 +550,7 @@ namespace WindowsFormsApp1
             Steny();
             EnemyAI();
             ZivotNepritel();
+            Respawn();
         }
 
     }
