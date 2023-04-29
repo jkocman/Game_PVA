@@ -20,6 +20,8 @@ namespace WindowsFormsApp1
         string facing = "right";
         int l;
         bool x = false;
+        int enemyHitCount = 0;
+        int zivotnepritel = 11;
         public Form1()
         {
             
@@ -219,6 +221,175 @@ namespace WindowsFormsApp1
                     kulka.Hide();
                 }
             }
+        }
+        void ZivotNepritel()
+        {
+            if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+            {
+                zivotnepritel = zivotnepritel - 1;
+                if (zivotnepritel <= 0)
+                {
+                    nepritel.Hide();
+                }
+                kulka.Hide();
+            }
+            if (kulka.Bounds.IntersectsWith(nepritel2.Bounds))
+            {
+                zivotnepritel = zivotnepritel - 1;
+                if (zivotnepritel <= 0)
+                {
+                    nepritel2.Hide();
+                }
+                kulka.Hide();
+            }
+            if (kulka.Bounds.IntersectsWith(nepritel3.Bounds))
+            {
+                zivotnepritel = zivotnepritel - 1;
+                if (zivotnepritel <= 0)
+                {
+                    nepritel3.Hide();
+                }
+                kulka.Hide();
+            }
+            if (kulka.Bounds.IntersectsWith(nepritel4.Bounds))
+            {
+                zivotnepritel = zivotnepritel - 1;
+                if (zivotnepritel <= 0)
+                {
+                    nepritel4.Hide();
+                }
+                kulka.Hide();
+            }
+            if (kulka.Bounds.IntersectsWith(nepritel5.Bounds))
+            {
+                zivotnepritel = zivotnepritel - 1;
+                if (zivotnepritel <= 0)
+                {
+                    nepritel5.Hide();
+                }
+                kulka.Hide();
+            }
+            int p = nepritel.Location.X;
+            int p2 = nepritel.Location.Y;
+            zivotynepritele.Location = new Point(p - 30, p2 - 77);
+
+            if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+            {
+                enemyHitCount++;
+
+                switch (enemyHitCount)
+                {
+                    case 3:
+                        zivotynepritele.Image = Properties.Resources.ok;
+                        break;
+                    case 7:
+                        zivotynepritele.Image = Properties.Resources.blbý;
+                        break;
+                    case 11:
+                        zivotynepritele.Image = Properties.Resources.cool3;
+                        enemyHitCount = 0;
+                        break;
+                }
+                zivotynepritele.Invalidate();
+
+            }
+            int p3 = nepritel2.Location.X;
+            int p4 = nepritel2.Location.Y;
+            zivotynepritele2.Location = new Point(p3 - 30, p4 - 77);
+
+            if (kulka.Bounds.IntersectsWith(nepritel2.Bounds))
+            {
+                enemyHitCount++;
+
+                switch (enemyHitCount)
+                {
+                    case 3:
+                        zivotynepritele2.Image = Properties.Resources.ok;
+                        break;
+                    case 7:
+                        zivotynepritele2.Image = Properties.Resources.blbý;
+                        break;
+                    case 11:
+                        zivotynepritele2.Image = Properties.Resources.cool3;
+                        enemyHitCount = 0;
+                        break;
+                }
+                zivotynepritele2.Invalidate();
+
+            }
+            int p5 = nepritel3.Location.X;
+            int p6 = nepritel3.Location.Y;
+            zivotynepritele3.Location = new Point(p5 - 30, p6 - 77);
+
+            if (kulka.Bounds.IntersectsWith(nepritel3.Bounds))
+            {
+                enemyHitCount++;
+
+                switch (enemyHitCount)
+                {
+                    case 3:
+                        zivotynepritele3.Image = Properties.Resources.ok;
+                        break;
+                    case 7:
+                        zivotynepritele3.Image = Properties.Resources.blbý;
+                        break;
+                    case 11:
+                        zivotynepritele3.Image = Properties.Resources.cool3;
+                        enemyHitCount = 0;
+                        break;
+                }
+                zivotynepritele3.Invalidate();
+
+            }
+            int p7 = nepritel4.Location.X;
+            int p8 = nepritel4.Location.Y;
+            zivotynepritele4.Location = new Point(p7 - 30, p8 - 77);
+
+            if (kulka.Bounds.IntersectsWith(nepritel4.Bounds))
+            {
+                enemyHitCount++;
+
+                switch (enemyHitCount)
+                {
+                    case 3:
+                        zivotynepritele4.Image = Properties.Resources.ok;
+                        break;
+                    case 7:
+                        zivotynepritele4.Image = Properties.Resources.blbý;
+                        break;
+                    case 11:
+                        zivotynepritele4.Image = Properties.Resources.cool3;
+                        enemyHitCount = 0;
+                        break;
+                }
+                zivotynepritele4.Invalidate();
+
+            }
+            int p9 = nepritel5.Location.X;
+            int p10 = nepritel5.Location.Y;
+            zivotynepritele5.Location = new Point(p9 - 30, p10 - 77);
+
+            if (kulka.Bounds.IntersectsWith(nepritel5.Bounds))
+            {
+                enemyHitCount++;
+
+                switch (enemyHitCount)
+                {
+                    case 3:
+                        zivotynepritele5.Image = Properties.Resources.ok;
+                        break;
+                    case 7:
+                        zivotynepritele5.Image = Properties.Resources.blbý;
+                        break;
+                    case 11:
+                        zivotynepritele5.Image = Properties.Resources.cool3;
+                        enemyHitCount = 0;
+                        break;
+                }
+                zivotynepritele5.Invalidate();
+
+            }
+
         }
         void Steny()
         {
