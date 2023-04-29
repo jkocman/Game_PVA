@@ -91,6 +91,24 @@ namespace WindowsFormsApp1
             {
                 shoot = true;
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (!x)
+                {
+                    if (!pause)
+                    {
+                        panel3.Show();
+                        timer1.Stop();
+                        pause = true;
+                    }
+                    else
+                    {
+                        panel3.Hide();
+                        timer1.Start();
+                        pause = false;
+                    }
+                }
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
