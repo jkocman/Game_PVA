@@ -136,6 +136,10 @@ namespace WindowsFormsApp1
                 Player.Top += 8;
             }
         }
+        private void diff_Click(object sender, EventArgs e)
+        {
+            panel4.Show();
+        }
         void Bolts()
         {
             int i = Player.Location.X;
