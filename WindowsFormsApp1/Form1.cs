@@ -17,18 +17,17 @@ namespace WindowsFormsApp1
         bool up;
         bool down;
         bool shoot;
-        string facing = "right";
-        int l;
+        bool pause = false;
         bool x = false;
+        string facing = "right";
         int enemyHitCount = 0;
         int zivotnepritel = 11;
+        int l;
+        int score;
         int obtiznost = 1;
         Random r = new Random();
-        int score;
         public Form1()
         {
-            
-            
             InitializeComponent();
             this.BackColor = Color.Aqua;
             panel1.BackgroundImage = Properties.Resources.background2;
@@ -39,6 +38,8 @@ namespace WindowsFormsApp1
             panel2.BackColor = Color.Blue;
             this.Controls.Add(panel2);
             this.Controls.SetChildIndex(panel2, 0);
+            zivotynepritele.Location = new Point(panel1.Location.X, panel1.Location.Y + panel1.Height);
+            enemyHitCount = 0;
             this.Controls.Add(panel3);
             this.Controls.SetChildIndex(panel3, 0);
             panel3.Hide();
