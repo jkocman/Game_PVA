@@ -177,6 +177,26 @@ namespace WindowsFormsApp1
                     kulka.Hide();
                 }
             }
+            void Steny()
+            {
+                if (Player.Bounds.IntersectsWith(stena2.Bounds))
+                {
+                    Player.Top = stena2.Top - Player.Height;
+                }
+                if (Player.Bounds.IntersectsWith(stena.Bounds))
+                {
+                    Player.Top = stena.Top + Player.Height;
+                }
+                if (Player.Bounds.IntersectsWith(stena3.Bounds))
+                {
+                    Player.Left = stena3.Left + Player.Width;
+                }
+                if (Player.Bounds.IntersectsWith(stena4.Bounds))
+                {
+                    Player.Left = stena4.Left - Player.Width;
+                }
+
+            }
             if (facing == "up")
             {
                 kulka.Size = new Size(20, 34);
@@ -218,10 +238,31 @@ namespace WindowsFormsApp1
                 }
             }
         }
+        void Steny()
+        {
+            if (Player.Bounds.IntersectsWith(stena2.Bounds))
+            {
+                Player.Top = stena2.Top - Player.Height;
+            }
+            if (Player.Bounds.IntersectsWith(stena.Bounds))
+            {
+                Player.Top = stena.Top + Player.Height;
+            }
+            if (Player.Bounds.IntersectsWith(stena3.Bounds))
+            {
+                Player.Left = stena3.Left + Player.Width;
+            }
+            if (Player.Bounds.IntersectsWith(stena4.Bounds))
+            {
+                Player.Left = stena4.Left - Player.Width;
+            }
+
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
             Bolts();
+            Steny();
         }
 
     }
