@@ -641,5 +641,11 @@ namespace WindowsFormsApp1
             this.Close();
 
         }
+        private void continuen_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            panel3.Hide();
+            pause = false;
+        }
     }
 }
