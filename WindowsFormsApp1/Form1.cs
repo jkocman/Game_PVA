@@ -369,6 +369,7 @@ namespace WindowsFormsApp1
 
             if (facing == "right")
             {
+                Player.BackgroundImage = Properties.Resources.Amogus;
                 kulka.Size = new Size(34, 20);
                 Point currentLocation = kulka.Location;
                 kulka.Location = new Point(currentLocation.X + 40, currentLocation.Y);
@@ -379,7 +380,6 @@ namespace WindowsFormsApp1
                 }
                 if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
                 {
-                    time
                     kulka.Hide();
                 }
                 if (kulka.Location.X == Player.Location.X + 400)
@@ -390,6 +390,7 @@ namespace WindowsFormsApp1
             }
             if (facing == "left")
             {
+                Player.BackgroundImage = Properties.Resources.Amogus_obraceny;
                 kulka.Size = new Size(34, 20);
                 Point currentLocation = kulka.Location;
                 kulka.Location = new Point(currentLocation.X - 40, currentLocation.Y);
