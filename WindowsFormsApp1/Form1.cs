@@ -65,6 +65,7 @@ namespace WindowsFormsApp1
             zivotynepritele4.Hide();
             zivotynepritele5.Hide();
         }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Right)
@@ -175,93 +176,6 @@ namespace WindowsFormsApp1
         {
             obtiznost = 3;
             panel4.Hide();
-        }
-        void Bolts()
-        {
-            int i = Player.Location.X;
-            int j = Player.Location.Y;
-
-
-            if (facing == "right")
-            {
-                kulka.Size = new Size(34, 20);
-                Point currentLocation = kulka.Location;
-                kulka.Location = new Point(currentLocation.X + 40, currentLocation.Y);
-                if (shoot == true)
-                {
-                    kulka.Show();
-                    kulka.Location = new Point(i, j);
-                }
-                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
-                {
-                    kulka.Hide();
-                }
-                if (kulka.Location.X == Player.Location.X + 400)
-                {
-                    kulka.Location = new Point(i, j);
-                    kulka.Hide();
-                }
-            }
-            if (facing == "left")
-            {
-                kulka.Size = new Size(34, 20);
-                Point currentLocation = kulka.Location;
-                kulka.Location = new Point(currentLocation.X - 40, currentLocation.Y);
-                if (shoot == true)
-                {
-                    kulka.Show();
-                    kulka.Location = new Point(i, j);
-                }
-                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
-                {
-                    kulka.Hide();
-                }
-                if (kulka.Location.X == Player.Location.X - 400)
-                {
-                    kulka.Location = new Point(i, j);
-                    kulka.Hide();
-                }
-            }
-            if (facing == "up")
-            {
-                kulka.Size = new Size(20, 34);
-                Point currentLocation = kulka.Location;
-                kulka.Location = new Point(currentLocation.X, currentLocation.Y - 40);
-                if (shoot == true)
-                {
-                    kulka.Show();
-                    kulka.Location = new Point(i, j);
-                }
-                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
-                {
-                    kulka.Hide();
-                }
-                if (kulka.Location.Y == Player.Location.Y - 400)
-                {
-                    kulka.Location = new Point(i, j);
-                    kulka.Hide();
-                }
-            }
-            if (facing == "down")
-            {
-                kulka.Size = new Size(20, 34);
-                Point currentLocation = kulka.Location;
-                kulka.Location = new Point(currentLocation.X, currentLocation.Y + 40);
-                if (shoot == true)
-                {
-                    kulka.Show();
-                    kulka.Location = new Point(i, j);
-                }
-                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
-                {
-                    kulka.Hide();
-                }
-                if (kulka.Location.Y == Player.Location.Y + 400)
-                {
-                    kulka.Location = new Point(i, j);
-                    kulka.Hide();
-                }
-            }
         }
         void ZivotNepritel()
         {
@@ -432,6 +346,109 @@ namespace WindowsFormsApp1
             }
 
         }
+
+        void Respawn()
+        {
+            int x = r.Next(0, 500);
+            int y = r.Next(0, 500);
+            if (zivotnepritel <= 0)
+            {
+                score++;
+                skore.Text = "skore: " + score;
+                skore2.Text = "skore: " + score;
+                zivotnepritel = 11;
+                nepritel.Location = new Point(y, x);
+                nepritel.Show();
+            }
+        }
+        void Bolts()
+        {
+            int i = Player.Location.X;
+            int j = Player.Location.Y;
+
+
+            if (facing == "right")
+            {
+                kulka.Size = new Size(34, 20);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X + 40, currentLocation.Y);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    time
+                    kulka.Hide();
+                }
+                if (kulka.Location.X == Player.Location.X + 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "left")
+            {
+                kulka.Size = new Size(34, 20);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X - 40, currentLocation.Y);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.X == Player.Location.X - 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "up")
+            {
+                kulka.Size = new Size(20, 34);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X, currentLocation.Y - 40);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.Y == Player.Location.Y - 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "down")
+            {
+                kulka.Size = new Size(20, 34);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X, currentLocation.Y + 40);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.Y == Player.Location.Y + 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+        }
         void EnemyAI()
         {
             if (obtiznost == 1)
@@ -546,21 +563,6 @@ namespace WindowsFormsApp1
                 timer1.Stop();
             }
         }
-
-        void Respawn()
-        {
-            int x = r.Next(0, 500);
-            int y = r.Next(0, 500);
-            if (zivotnepritel <= 0)
-            {
-                score++;
-                skore.Text = "skore: " + score;
-                skore2.Text = "skore: " + score;
-                zivotnepritel = 11;
-                nepritel.Location = new Point(y, x);
-                nepritel.Show();
-            }
-        }
         void GameUpdate()
         {
             if (nepritel.Bounds.IntersectsWith(Player.Bounds))
@@ -604,6 +606,7 @@ namespace WindowsFormsApp1
                 nepritel5.Location = new Point(temp1, temp2);
             }
         }
+
         private void retry_Click(object sender, EventArgs e)
         {
             score = 0;
@@ -634,12 +637,14 @@ namespace WindowsFormsApp1
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
-            Bolts();
-            Steny();
-            EnemyAI();
             ZivotNepritel();
             Respawn();
+            Bolts();
+            EnemyAI();
+            Steny();
+            GameUpdate();
         }
+
         private void start_Click(object sender, EventArgs e)
         {
             timer1.Start();
@@ -654,16 +659,17 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
-        private void exit3_Click(object sender, EventArgs e)
-        {
-            this.Close();
 
-        }
         private void continuen_Click(object sender, EventArgs e)
         {
             timer1.Start();
             panel3.Hide();
             pause = false;
+        }
+
+        private void exit3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
