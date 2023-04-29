@@ -622,6 +622,10 @@ namespace WindowsFormsApp1
             ZivotNepritel();
             Respawn();
         }
-
+        private void start_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            panel1.Hide();
+        }
     }
 }
