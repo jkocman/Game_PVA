@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         bool up;
         bool down;
         bool shoot;
+        string facing = "right";
         public Form1()
         {
             
@@ -61,18 +62,22 @@ namespace WindowsFormsApp1
             if (e.KeyCode == Keys.Right)
             {
                 right = true;
+                facing = "right";
             }
             if (e.KeyCode == Keys.Left)
             {
                 left = true;
+                facing = "left";
             }
             if (e.KeyCode == Keys.Up)
             {
                 up = true;
+                facing = "up";
             }
             if (e.KeyCode == Keys.Down)
             {
                 down = true;
+                facing = "down";
             }
             if (e.KeyCode == Keys.Space)
             {
@@ -126,9 +131,97 @@ namespace WindowsFormsApp1
                 Player.Top += 8;
             }
         }
+        void Bolts()
+        {
+            int i = Player.Location.X;
+            int j = Player.Location.Y;
+
+
+            if (facing == "right")
+            {
+                kulka.Size = new Size(34, 20);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X + 40, currentLocation.Y);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.X == Player.Location.X + 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "left")
+            {
+                kulka.Size = new Size(34, 20);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X - 40, currentLocation.Y);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.X == Player.Location.X - 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "up")
+            {
+                kulka.Size = new Size(20, 34);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X, currentLocation.Y - 40);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.Y == Player.Location.Y - 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+            if (facing == "down")
+            {
+                kulka.Size = new Size(20, 34);
+                Point currentLocation = kulka.Location;
+                kulka.Location = new Point(currentLocation.X, currentLocation.Y + 40);
+                if (shoot == true)
+                {
+                    kulka.Show();
+                    kulka.Location = new Point(i, j);
+                }
+                if (kulka.Bounds.IntersectsWith(nepritel.Bounds))
+                {
+                    kulka.Hide();
+                }
+                if (kulka.Location.Y == Player.Location.Y + 400)
+                {
+                    kulka.Location = new Point(i, j);
+                    kulka.Hide();
+                }
+            }
+        }
         private void timer1_Tick(object sender, EventArgs e)
         {
             PlayerMove();
+            Bolts();
         }
 
     }
