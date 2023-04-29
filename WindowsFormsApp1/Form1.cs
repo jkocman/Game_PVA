@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
         bool down;
         bool shoot;
         string facing = "right";
+        int l;
+        bool x = false;
         public Form1()
         {
             
@@ -177,26 +179,6 @@ namespace WindowsFormsApp1
                     kulka.Hide();
                 }
             }
-            void Steny()
-            {
-                if (Player.Bounds.IntersectsWith(stena2.Bounds))
-                {
-                    Player.Top = stena2.Top - Player.Height;
-                }
-                if (Player.Bounds.IntersectsWith(stena.Bounds))
-                {
-                    Player.Top = stena.Top + Player.Height;
-                }
-                if (Player.Bounds.IntersectsWith(stena3.Bounds))
-                {
-                    Player.Left = stena3.Left + Player.Width;
-                }
-                if (Player.Bounds.IntersectsWith(stena4.Bounds))
-                {
-                    Player.Left = stena4.Left - Player.Width;
-                }
-
-            }
             if (facing == "up")
             {
                 kulka.Size = new Size(20, 34);
@@ -257,6 +239,27 @@ namespace WindowsFormsApp1
                 Player.Left = stena4.Left - Player.Width;
             }
 
+        }
+        void LifeIndex()
+        {
+            if (l == 1)
+            {
+                zivot1.Image = Properties.Resources._2;
+            }
+            if (l == 2)
+            {
+                zivot2.Image = Properties.Resources._2;
+            }
+            if (l == 3)
+            {
+                zivot3.Image = Properties.Resources._2;
+            }
+            if (l >= 3)
+            {
+                x = true;
+                panel2.Show();
+                timer1.Stop();
+            }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
