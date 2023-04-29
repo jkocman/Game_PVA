@@ -487,7 +487,7 @@ namespace WindowsFormsApp1
                 nepritel4.Location = n;
             }
         }
-            void Steny()
+        void Steny()
         {
             if (Player.Bounds.IntersectsWith(stena2.Bounds))
             {
@@ -626,6 +626,20 @@ namespace WindowsFormsApp1
         {
             timer1.Start();
             panel1.Hide();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void exit2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void exit3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
